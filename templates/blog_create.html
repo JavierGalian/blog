@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+<h1 class="text-3xl font-bold mb-4">Create Post</h1>
+<form class="max-w-sm mx-auto" method='POST'>
+    {% csrf_token %}
+    <div class="mb-4">
+        <label class="block font-bold" for="id_title">Title:</label>
+        {{form.title}}
+    </div>
+    <div class="mb-4">
+        <label class="block font-bold" for="id_content">Content:</label>
+        {{form.content}}
+    </div>
+    <button class="px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600" type="submit">Submit</button>
+</form>
+{% endblock content %}
